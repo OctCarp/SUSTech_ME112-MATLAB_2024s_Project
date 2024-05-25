@@ -1,0 +1,156 @@
+\documentclass[10.5pt,compsoc,UTF8]{CjC}
+\usepackage{CTEX}
+\usepackage{graphicx}
+\usepackage{footmisc}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[noadjust]{cite}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{ccaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{xcolor,stfloats}
+\usepackage{comment}
+\setcounter{page}{1}
+\graphicspath{{figures/}}
+\usepackage{cuted}%flushend,
+\usepackage{captionhack}
+\usepackage{epstopdf}
+\usepackage{gbt7714}
+\usepackage{geometry}
+
+
+%===============================%
+
+%footnote use of *
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setcounter{footnote}{0}
+\renewcommand\footnotelayout{\zihao{5-}}
+
+\newtheoremstyle{mystyle}{0pt}{0pt}{\normalfont}{1em}{\bf}{}{1em}{}
+\theoremstyle{mystyle}
+\renewcommand\figurename{figure~}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand{\abc}{\color{white}\vrule width 2pt}
+\renewcommand{\bibsection}{}
+\makeatletter
+\renewcommand{\@biblabel}[1]{[#1]\hfill}
+\makeatother
+\setlength\parindent{2em}
+
+%调整页边距
+\geometry{top=3cm, bottom=2cm, left=2cm, right=2cm}
+
+\begin{document}
+
+\makeatletter
+\newcommand\mysmall{\@setfontsize\mysmall{7}{9.5}}
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+
+\let\temp\footnote
+\renewcommand \footnote[1]{\temp{\zihao{-5}#1}}
+
+
+{
+\centering
+{\zihao{2} \heiti MATLAB Project 选题报告 }
+\vskip 5mm
+{\zihao{3} \heiti ——基于 MATLAB 的面部表情识别 }
+\vskip 5mm
+}
+{
+\centering
+{\zihao{4}\fangsong 郭健阳 12111506\quad  徐春晖 12110304}
+\vskip 5mm
+}
+\vspace {10mm}
+
+\begin{multicols}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\heiti 项目主题}
+
+基于 MATLAB 的图像识别中的面部表情识别。通过输入的人脸表情图片，来分析其作为各个不同表情的可能性。
+
+本项目与深度学习、神经网络、计算机视觉方向较为相关。着眼于 MATLAB 高效科学计算的优势，实现一个简单的面部表情识别。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\heiti 项目目标}
+
+使用 MATLAB 实现图像识别中的面部表情识别功能。具体来说，提供人物图片，识别图片中人物的面部表情，并给出预测表情的概率。
+
+实现 GUI 界面，方便用户进行更好的交互。
+
+因为本小组的两位同学都来自于计算机系，对于更普遍的科学理论，如生物、物理、电子等方面的背景知识了解有限，故决定：选取与日常学习内容有一定关系的计算机视觉方向，作为 MATLAB 课程项目的选题。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\heiti 初步方案}
+
+项目暂定分为以下几个行动步骤：
+
+\begin{enumerate}
+    \item 调研相关领域的研究成果和实现，收集有关面部表情识别的相关工作。
+    \item 找到合适的训练数据集和深度学习架构，能合适地完成人脸表情识别的任务。
+    \item 在 MATLAB 中使用合适的库实现深度学习网络结构。
+    \item 训练模型，分析模型的准确度；使模型能够持久化保存。
+    \item 设计 GUI 界面，让用户能够更直观地进行导入数据（即表情图片）、分析数据的操作。
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\heiti 成员分工}
+\begin{itemize}
+    \item 郭健阳
+        \begin{itemize}
+            \item 理论资料收集；
+            \item 数据集收集；
+            \item GUI 设计；
+        \end{itemize}
+    \item 徐春晖
+        \begin{itemize}
+            \item 模型设计与实现；
+            \item 性能测试；
+        \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace {10mm}
+
+\centerline
+{\zihao{5}\textsf{参~考~资~料}}
+\zihao{5-} \addtolength{\itemsep}{-1em}
+\vspace {1.5mm}
+
+% \begin{thebibliography}{00}
+% \bibitem{b1} Zhang, T., Zheng, W., Cui, Z., Zong, Y., Yan, J., \& Yan, K. (2016). A deep neural network-driven feature learning method for multi-view facial expression recognition. IEEE Transactions on Multimedia, 18(12), 2528-2536.
+% \bibitem{b2} Mollahosseini, A., Chan, D., \& Mahoor, M. H. (2016, March). Going deeper in facial expression recognition using deep neural networks. In 2016 IEEE Winter conference on applications of computer vision (WACV) (pp. 1-10). IEEE.
+% \bibitem{b3} Yang, H., Ciftci, U., \& Yin, L. (2018). Facial expression recognition by de-expression residue learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2168-2177).
+% \end{thebibliography}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\nocite{*}
+
+\end{multicols}
+\end{document}
+
+
