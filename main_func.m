@@ -52,6 +52,7 @@ title('Probability of each class');
 end
 
 %% GUI
+
 function createImageClassificationGUI()
     % 创建主 GUI 窗口
     fig = uifigure('Position', [100, 100, 900, 700], 'Name', 'Facial Expression Recognition GUI');
@@ -161,6 +162,8 @@ function createImageClassificationGUI()
     fig.UserData.lblMaxProb = lblMaxProb;
 end
 
+%% Callback function
+
 function selectImageCallback(fig)
     % 选择图片文件
     [file, path] = uigetfile({'*.jpg;*.jpeg;*.png;*.bmp', 'Image Files (*.jpg, *.jpeg, *.png, *.bmp)'});
@@ -261,7 +264,8 @@ function showMaxProbCallback(fig)
     lblMaxProb.Text = sprintf('Accuracy: %.2f%%', maxScore * 100);
 end
 
-%% main
+%% Main function
+
 clc;
 test = true;
 if test
